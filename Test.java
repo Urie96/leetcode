@@ -1,12 +1,9 @@
-/*
- * @lc app=leetcode.cn id=4 lang=java
- *
- * [4] 寻找两个有序数组的中位数
- */
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(findMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 }));
+    }
 
-// @lc code=start
-class Solution {
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length < nums2.length) {
             int[] temp = nums1;
             nums1 = nums2;
@@ -26,13 +23,11 @@ class Solution {
                 break;
             }
         }
-        int leftMax = Math.max(i > 0 ? nums1[i - 1] : Integer.MIN_VALUE, j > 0 ? nums2[j - 1] : Integer.MIN_VALUE);
-        int rightMin = Math.min(i < nums1.length ? nums1[i] : Integer.MAX_VALUE,
-                j < nums2.length ? nums2[j] : Integer.MAX_VALUE);
+        int leftMax = Math.max(i > 0 ? nums1[i - 1] : 0, j > 0 ? nums2[j - 1] : 0);
+        int rightMin = Math.min(i < nums1.length ? nums1[i] : 0, j < nums2.length ? nums2[j] : 0);
         if ((nums1.length + nums2.length) % 2 == 1) {
             return rightMin;
         }
         return ((double) rightMin + leftMax) / 2;
     }
 }
-// @lc code=end
