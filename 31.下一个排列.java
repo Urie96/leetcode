@@ -1,15 +1,13 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-public class Test {
-    public static void main(String[] args) {
-        Test t = new Test();
-        int[] arr = new int[] { 1, 3,2 };
-        t.nextPermutation(arr);
-        System.out.println(Arrays.toString(arr));
-    }
+/*
+ * @lc app=leetcode.cn id=31 lang=java
+ *
+ * [31] 下一个排列
+ */
 
+// @lc code=start
+class Solution {
     public void nextPermutation(int[] nums) {
         int i = nums.length - 1;
         for (; i > 0; i--) {
@@ -36,5 +34,5 @@ public class Test {
         nums[a] = nums[b];
         nums[b] = tmp;
     }
-
 }
+// @lc code=end
