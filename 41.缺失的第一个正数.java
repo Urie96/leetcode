@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+/*
+ * @lc app=leetcode.cn id=41 lang=java
+ *
+ * [41] 缺失的第一个正数
+ */
 
-public class Test {
-    public static void main(String[] args) {
-        Test t = new Test();
-        int[] arr = new int[] { 3, 4, -1, 1 };
-        System.out.println(t.firstMissingPositive(arr));
-    }
-
+// @lc code=start
+class Solution {
     public int firstMissingPositive(int[] nums) {
         int len = nums.length;
         boolean findOne = false;
@@ -24,7 +21,7 @@ public class Test {
             return 1;
         }
         for (int i = 0; i < len; i++) {
-            int idx = nums[i] - 1;
+            int idx = Math.abs(nums[i]) - 1;
             if (nums[idx] > 0) {
                 nums[idx] *= -1;
             }
@@ -36,5 +33,5 @@ public class Test {
         }
         return len + 1;
     }
-
 }
+// @lc code=end

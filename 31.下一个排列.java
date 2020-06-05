@@ -16,15 +16,20 @@ class Solution {
             }
         }
         if (i < 1) {
+            int j = nums.length - 1;
+            while (i < j) {
+                swap(nums, i++, j--);
+            }
             return;
         }
         for (int j = nums.length - 1; j >= i; j--) {
             if (nums[j] > nums[i - 1]) {
                 swap(nums, i - 1, j);
+                break;
             }
         }
         int j = nums.length - 1;
-        while (i < nums.length) {
+        while (i < j) {
             swap(nums, i++, j--);
         }
     }
