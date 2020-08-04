@@ -1,0 +1,13 @@
+{
+    "ego.power-tools": {
+        "buttons": [
+            {
+                "text": "Git Push",
+                "action": {
+                    "command": "git add . && git commit -m '.' && git push",
+                    "silent": false
+                }
+            }
+        ]
+    }
+}
