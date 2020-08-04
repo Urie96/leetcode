@@ -31,5 +31,5 @@ var inorderTraversal = function (root) {
     return res
 };
 // @lc code=end
-let tree = TreeNode.generate([1, null, 2, 3])
+let tree = TreeNode.generate2([1, null, 2, 3])
 console.log(inorderTraversal(tree))

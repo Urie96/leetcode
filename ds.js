@@ -50,6 +50,28 @@ class TreeNode {
         }
         return gen(0)
     }
+
+    static generate2(arr) {
+        let queue = []
+        let root = new TreeNode()
+        let p = root
+        let shouldLeft = true
+        for (let v of arr) {
+            if (!v) {
+                continue
+            }
+            let leaf = new TreeNode(v)
+            queue.push(leaf)
+            if (shouldLeft) {
+                p.left = leaf
+                shouldLeft = false
+            } else {
+                p.right = leaf
+                shouldLeft = true
+            }
+        }
+        return root
+    }
 }
 
 export { ListNode, TreeNode }
